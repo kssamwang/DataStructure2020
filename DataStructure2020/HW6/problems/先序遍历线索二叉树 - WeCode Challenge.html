@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://oj.tongji.edu.cn/index.php/problems/1/673 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>先序遍历线索二叉树 - WeCode Challenge</title>
+	
+	<link rel="icon" href="https://oj.tongji.edu.cn/assets/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./先序遍历线索二叉树 - WeCode Challenge_files/main.css">
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery-1.10.2.min.js.下载"></script>
+	<!-- You can use google's cdn for loading jquery: -->
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery-ui-1.10.3.custom.min.js.下载"></script>
+	<link rel="stylesheet" href="./先序遍历线索二叉树 - WeCode Challenge_files/jquery-ui-1.10.3.custom.min.css">
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/moment.min.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.hoverIntent.minified.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.cookie.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.ba-resize.min.js.下载"></script>
+
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.noty.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/center.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/bottomRight.js.下载"></script>
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/default.js.下载"></script>
+
+	<link rel="stylesheet" type="text/css" href="./先序遍历线索二叉树 - WeCode Challenge_files/nanoscroller.css">
+	<script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.nanoscroller.min.js.下载"></script>
+
+	<link rel="stylesheet" type="text/css" href="./先序遍历线索二叉树 - WeCode Challenge_files/font-awesome.min.css">
+
+<script>
+shj={};
+shj.site_url = 'https\x3A\x2F\x2Foj.tongji.edu.cn\x2Findex.php/';
+shj.base_url = 'https\x3A\x2F\x2Foj.tongji.edu.cn/';
+shj.csrf_token = $.cookie('shjcsrftoken');
+shj.offset = moment('2021-11-17 14:15:35').diff(moment());
+shj.time = moment();
+shj.check_for_notifications = false;
+shj.notif_check_delay = 30;
+shj.color_scheme = 'github';
+</script><script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/shj_functions.js.下载"></script><script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/Chart.js.下载"> </script><link rel="stylesheet" type="text/css" href="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.snippet.css"><link rel="stylesheet" type="text/css" href="./先序遍历线索二叉树 - WeCode Challenge_files/github.css"><script type="text/javascript" src="./先序遍历线索二叉树 - WeCode Challenge_files/jquery.snippet.js.下载"></script><script>
+	$(document).ready(function(){
+        var total_chart = new Chart($("#total_chart"), {
+            type: 'doughnut',
+            data: {
+				labels: [
+									'100',
+									'90',
+									'80',
+									'70',
+									'60',
+									'50',
+									'40',
+									'30',
+									'20',
+									'10',
+									'0',
+								],
+				datasets: [{
+					label: 'ALL',
+					data:[
+											'84',
+											'0',
+											'16',
+											'0',
+											'1',
+											'0',
+											'2',
+											'0',
+											'0',
+											'0',
+											'17',
+										],
+					backgroundColor: [
+											'rgba(255, 0, 0, 0.8)',
+											'rgba(255, 77, 0, 0.8)',
+											'rgba(255, 154, 0, 0.8)',
+											'rgba(255, 230, 0, 0.8)',
+											'rgba(154, 255, 0, 0.8)',
+											'rgba(0, 255, 0, 0.8)',
+											'rgba(0, 255, 154, 0.8)',
+											'rgba(0, 204, 255, 0.8)',
+											'rgba(0, 51, 255, 0.8)',
+											'rgba(51, 0, 255, 0.8)',
+											'rgba(128, 0, 255, 0.8)',
+										]
+				}]
+			},
+			options: {
+				legend: {
+					display: false,
+				}
+			}
+        });
+        var final_chart = new Chart($("#final_chart"), {
+            type: 'doughnut',
+            data: {
+				labels: [
+									'100',
+									'90',
+									'80',
+									'70',
+									'60',
+									'50',
+									'40',
+									'30',
+									'20',
+									'10',
+									'0',
+								],
+				datasets: [{
+					label: 'ALL',
+					data:[
+											'71',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+											'0',
+										],
+					backgroundColor: [
+											'rgba(255, 0, 0, 0.8)',
+											'rgba(255, 77, 0, 0.8)',
+											'rgba(255, 154, 0, 0.8)',
+											'rgba(255, 230, 0, 0.8)',
+											'rgba(154, 255, 0, 0.8)',
+											'rgba(0, 255, 0, 0.8)',
+											'rgba(0, 255, 154, 0.8)',
+											'rgba(0, 204, 255, 0.8)',
+											'rgba(0, 51, 255, 0.8)',
+											'rgba(51, 0, 255, 0.8)',
+											'rgba(128, 0, 255, 0.8)',
+										]
+				}]
+			},
+			options: {
+				legend: {
+					display: false,
+				}
+			}
+        });
+		$("#final_chart").hide();
+		$("#chart_btn").click(function(){
+			if($(this).text() == 'total')
+			{
+				$(this).text('final');
+				$("#total_chart").hide();
+				$("#final_chart").show();
+			}
+			else
+			{
+				$(this).text('total');
+				$("#total_chart").show();
+				$("#final_chart").hide();
+			}
+		});
+		// Syntax highlighting increases the page's height, and we need to update the scroll-bar
+		$('.problem_description').resize(function(){
+			$('.scroll-wrapper').nanoScroller();
+		});
+		// Fix text directions for rtl text
+		$.each($('.problem_description [dir="auto"]'), function(i, element){
+			if (getComputedStyle(element).direction == 'rtl')
+			{
+				$(element).css('direction', 'rtl');
+				$(element).parent('ul, ol').css('direction', 'rtl');
+			}
+		});
+		// Syntax highlighting
+		$('pre code.language-c').parent().snippet('c', {style: shj.color_scheme});
+		$('pre code.language-cpp').parent().snippet('cpp', {style: shj.color_scheme});
+		$('pre code.language-python').parent().snippet('python', {style: shj.color_scheme});
+		$('pre code.language-java').parent().snippet('java', {style: shj.color_scheme});
+
+		var pid = 1;
+		$('#collect_btn').click(function(){
+			$.ajax({
+				type: 'POST',
+				url: shj.site_url + "problems/collect/" + pid,
+				data: {
+					shj_csrf_token: shj.csrf_token
+				},
+				beforeSend: shj.loading_start,
+				complete: shj.loading_finish,
+				error: shj.loading_error,
+				success: function (response) {
+					if (response.done) {
+					$("#collect0").hide();
+					$("#collect1").show();
+					$("#collect1").children("a").attr("href", shj.site_url + "problems/" + response.problem + "/" + response.assignment);
+					}
+					else
+						shj.loading_failed(response.message);
+				}
+			});
+		});
+	});
+</script><style type="text/css">/* Chart.js */
+/*
+ * DOM element rendering detection
+ * https://davidwalsh.name/detect-node-insertion
+ */
+@keyframes chartjs-render-animation {
+	from { opacity: 0.99; }
+	to { opacity: 1; }
+}
+
+.chartjs-render-monitor {
+	animation: chartjs-render-animation 0.001s;
+}
+
+/*
+ * DOM element resizing detection
+ * https://github.com/marcj/css-element-queries
+ */
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+	position: absolute;
+	direction: ltr;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	pointer-events: none;
+	visibility: hidden;
+	z-index: -1;
+}
+
+.chartjs-size-monitor-expand > div {
+	position: absolute;
+	width: 1000000px;
+	height: 1000000px;
+	left: 0;
+	top: 0;
+}
+
+.chartjs-size-monitor-shrink > div {
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	left: 0;
+	top: 0;
+}
+</style></head>
+
+
+
+
+
+
+
+
+
+
+<body id="body" style=""><div data-v-7e2550d6="" class="odm_extension image_downloader_wrapper"><!----></div>
+<div id="top_bar" class="color-problems">
+	<div class="top_object shj_menu" id="user_top">
+		<a href="https://oj.tongji.edu.cn/index.php/profile" id="profile_link"><i class="fa fa-user"></i></a>
+		<div class="top_menu user-menu">
+			<div class="gravatar"><img src="./先序遍历线索二叉树 - WeCode Challenge_files/tj5.jpeg" width="75" height="70"></div>
+			<div class="name"><i class="fa fa-user"></i> 1850767</div>
+			<div class="menu-controls">
+				<a href="https://oj.tongji.edu.cn/index.php/logout" class="logout-btn"><i class="fa fa-sign-out"></i> Sign Out</a>
+				<a href="https://oj.tongji.edu.cn/index.php/profile" class="profile-btn"><i class="fa fa-wrench"></i> Profile</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="shj_logo" class="top_left">
+		<a href="https://oj.tongji.edu.cn/index.php/">
+									<h1 class="shjlogo-text">Tongji Online Judge</h1><br>
+			<span>welcome</span>
+			<!-- <h2 class="shjlogo-text">WeCode <span>JUDGE</span></h2> -->
+		</a>
+	</div>
+	
+	
+	<div class="top_object shj_menu top_left" id="admin_tools_top">
+		All courses
+		<ul class="top_menu">
+					<li><a href="https://oj.tongji.edu.cn/index.php/courses/select/0">
+								    <i class="fa fa-square-o fa-lg" title="enter"></i>
+								My own assignments
+			</a></li>
+					<li><a href="https://oj.tongji.edu.cn/index.php/courses/select/1">
+								    <i class="fa fa-square-o fa-lg" title="enter"></i>
+								community
+			</a></li>
+					<li><a href="https://oj.tongji.edu.cn/index.php/courses/select/8">
+								    <i class="fa fa-square-o fa-lg" title="enter"></i>
+								2020数据结构(武妍班)
+			</a></li>
+					<li><a href="https://oj.tongji.edu.cn/index.php/courses/select/15">
+								    <i class="fa fa-square-o fa-lg" title="enter"></i>
+								2021网络数据风控技术
+			</a></li>
+					<li><a href="https://oj.tongji.edu.cn/index.php/courses/select/all">
+									<i class="fa fa-check-square-o fa-lg color6" title="in"></i>
+								All courses
+			</a></li>
+				</ul>
+	</div>
+
+	<div class="top_object top_left shj-spinner" style="display: none;">
+		<i class="fa fa-refresh fa-spin fa-lg"></i>
+	</div>
+</div>
+<div id="side_bar" class="sidebar_open" style="width: 173px;">
+	<ul>
+		<li class="color-dashboard">
+			<a href="https://oj.tongji.edu.cn/index.php/dashboard">
+				<i class="fa fa-dashboard fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Dashboard</span>
+			</a>
+		</li>
+		<li class="color-settings">
+			<a href="https://oj.tongji.edu.cn/index.php/settings">
+				<i class="fa fa-bars fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Settings</span>
+			</a>
+		</li>	
+		
+		<li class="color-users">
+			<a href="https://oj.tongji.edu.cn/index.php/courses">
+				<i class="fa fa-sitemap fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Courses</span>
+			</a>
+		</li>
+		<li class="color-notifications">
+			<a href="https://oj.tongji.edu.cn/index.php/notifications">
+				<i class="fa fa-bell fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Notifications</span>
+			</a>
+		</li>
+		<li class="color-assignments">
+			<a href="https://oj.tongji.edu.cn/index.php/assignments">
+				<i class="fa fa-folder-open fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Assignments</span>
+			</a>
+		</li>
+		<li class="color-problems selected">
+			<a href="https://oj.tongji.edu.cn/index.php/problems">
+				<i class="fa fa-puzzle-piece fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Problems</span>
+			</a>
+		</li>
+		
+		<li class="color-submit">
+			<a href="https://oj.tongji.edu.cn/index.php/resources">
+				<i class="fa fa-folder fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Resources </span>
+			</a>
+		</li>
+		
+		<li class="color-final_submissions">
+			<a href="https://oj.tongji.edu.cn/index.php/submissions/final/course/all">
+				<i class="fa fa-map-marker fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Final Submissions</span>
+			</a>
+		</li>
+		<li class="color-all_submissions">
+			<a href="https://oj.tongji.edu.cn/index.php/submissions/all/course/all">
+				<i class="fa fa-bars fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">All Submissions</span>
+			</a>
+		</li>
+		<li class="color-scoreboard">
+			<a href="https://oj.tongji.edu.cn/index.php/scoreboard">
+				<i class="fa fa-star fa-lg"></i>
+				<span class="sidebar_text" style="display: inline-block;">Scoreboard</span>
+			</a>
+		</li>
+	</ul>
+	<div id="sidebar_bottom">
+				<p class="timer" style="display: block;">Server Time: Nov 17 - 14:15:44</p>
+		<div id="shj_collapse" class="pointer">
+			<i id="collapse" class="fa fa-caret-square-o-left fa-lg"></i><span class="sidebar_text" style="display: inline-block;">Collapse Menu</span>
+		</div>
+	</div>
+</div>
+<div id="main_container" class="scroll-wrapper has-scrollbar" style="left: 173px;">
+	<div class="scroll-content" tabindex="0" style="right: -6px;">
+
+		<div id="page_title">
+			<i class="fa fa-puzzle-piece"></i>
+			<span dir="auto">	<a href="https://oj.tongji.edu.cn/index.php/assignments/problems_list/673">HW6线索二叉树</a> &gt;
+先序遍历线索二叉树
+</span>
+			
+		</div>
+
+		<div id="main_content">
+			
+	<div class="problem_description">
+		<h2 dir="auto">先序遍历线索二叉树</h2>
+<h3 dir="auto">描述</h3>
+<p dir="auto">练习线索二叉树的基本操作，包括先序线索化，先序遍历线索二叉树，输出二叉树的树型图。</p>
+<h3 dir="auto">输入</h3>
+<pre><code>一行，输入先序序列，内部结点用一个字符表示，空结点用#表示</code></pre>
+<h3 dir="auto">输出</h3>
+<pre><code>多行，输出先序线索化后的二叉树的树型图(逆时针旋转90度，每一层之间输出5个空格)，每个结点的数据按照下列格式：数据元素+LTag+RTag
+最后1行，输出对先序线索二叉树先序遍历的序列</code></pre>
+<h3 dir="auto">样例输入</h3>
+<pre><code>abc##d##ef###</code></pre>
+<h3 dir="auto">样例输出</h3>
+<pre><code>     e01
+          f11
+a00
+          d11
+     b00
+          c11
+abcdef</code></pre>
+	</div>
+
+	<div id="right_sidebar">
+		<div class="problems_widget">
+			<p> <i title="Download" class="fa fa-download fa-lg color8"></i> Download resource </p>
+					</div>
+
+		<div class="problems_widget"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+			<p> <i class="fa fa-bar-chart fa-lg color3"></i> Statistics <a id="chart_btn" href="https://oj.tongji.edu.cn/index.php/problems/1/673#">total</a></p> 
+			<canvas id="total_chart" style="width: 182px; height: 150px; display: block;" width="227" height="187" class="chartjs-render-monitor"> </canvas>
+			<canvas id="final_chart" style="width: 182px; height: 150px; display: none;" width="227" height="187" class="chartjs-render-monitor"> </canvas>
+			<a href="https://oj.tongji.edu.cn/index.php/problems/statistics/1/673"> more details </a>
+		</div>
+
+		<div class="problems_widget">
+			<p> <i class="fa fa-tags fa-lg color5"></i> Tags 
+						</p> 
+							数据结构 :
+									二叉树[60];
+								<br>
+					</div>
+
+					<div class="problems_widget">
+				<p><i class="fa fa-upload fa-lg color11"></i> Submit</p>
+				<form action="https://oj.tongji.edu.cn/index.php/submit" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<div style="display:none;">
+<input type="hidden" name="shj_csrf_token" value="b1d24eeffcdd6738189b1bdacde9da9f" dir="auto">
+</div>
+				<input type="hidden" name="problem" value="1" dir="auto">
+				<input type="hidden" name="assignment" value="673" dir="auto">
+
+				<p class="input_p">
+					<label>
+						Select language
+					</label>
+					<br>
+					<select id="language" name="language" class="sharif_input full-width" disabled="">
+						<option value="c++" selected="">c++ (cpp)</option>
+					</select>
+				</p>
+				<p class="input_p">
+					<input type="file" id="file" class="sharif_input full-width" name="userfile" disabled="" dir="auto">
+				</p>
+				<p class="input_p">
+					<input type="submit" value="Submit" class="sharif_input" disabled="" dir="auto">
+				</p>
+				</form>
+			</div>
+					
+		
+		
+		
+
+	</div>
+		</div>
+	</div>
+<div class="pane" style="display: none;"><div class="slider" style="height: 660px; top: 0px;"></div></div></div>
+
+
+</body></html>
